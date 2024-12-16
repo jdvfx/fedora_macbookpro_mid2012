@@ -42,7 +42,20 @@ to unmount the drive later on, use:</br>
 11) copy all your personal files from MacOS to Fedora:</br>
 replace MAC_USERNAME and LINUX_USERNAME with your user names
 
-<code>rsync -a --progress /run/media/mac/root/Users/MAC_USERNAME/Desktop/ /home/LINUX_USERNAME/Desktop/</code>
+<code>rsync -a --progress /run/media/mac/root/Users/MAC_USERNAME/Desktop/ /home/<>LINUX_USERNAME/Desktop/</code>
 
 repeat for other folders like Pictures,Documents,Downloads,...
+
+13) setup sleep when lid is close
+<code>sudo gnome-text-editor /usr/lib/systemd/logind.conf</code>
+un-comment (remove #) on this line: #HandleLidSwitch=suspend
+
+14) control fans (optional)
+<code>sudo dnf install mbpfan</code></br>
+- enable mbpfan service
+<code>sudo service mbpfan start</code></br>
+- the fan config file is located in: /etc/mbpfan.conf
+
+
+
 
