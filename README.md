@@ -1,8 +1,8 @@
 # guide: installing Fedora Linux on Macbook Pro 9,2 (mid 2012)
 
->>> you'll need a ethernet cable <<<
+> you'll need a ethernet cable
 
-> How to smoothly and safely transistion from MacOS to Fedora Linux.
+How to smoothly and safely transistion from MacOS to Fedora Linux.
 Instead of re-formating, we'll install Linux on a new drive
 and copy over the data from the MacOS drive while using Linux.
 That way, MacOS and all the data is kept (as a backup)
@@ -25,8 +25,8 @@ and press the Option key to boot into MacOS.
 5) select the USB stick name, that should boot up into a Fedora install
 6) update the system, in a terminal: <code>sudo dnf update</code>
 7) install the wifi driver:
-   - enable RPM fusion free and non-free:
-    <code>sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm</code>
+   - enable RPM fusion free and non-free:</br>
+    <code>sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm</code></br>
     <code>sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm</code>
 
 
