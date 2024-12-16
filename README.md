@@ -37,6 +37,9 @@ https://www.ifixit.com/Guide/MacBook+Pro+13-Inch+Unibody+Mid+2012+Hard+Drive+Rep
     <code>sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm</code>
     <sudo dnf broadcom-wl akmod-wl>
 
+> note: there seems to be a lot of issues with the drivers and some kernel updates, an easy fix is to use a wifi dongle, eg: TP-Link N150
+
+
 8) reboot and connect to wifi
 9) enable the Apple file system</br>
 <code>sudo dnf install apfs-fuse</code></br>
