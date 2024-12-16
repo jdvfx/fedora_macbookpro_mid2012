@@ -33,7 +33,8 @@ After installing Linux, we can boot into MacOS via usb using the Option Key
 
 9) plug the MacOS drive with the Sata to USB cable
 10) mount the MacOS drive</br>
-<code>sudo apfs-fuse -o uid=1000,gid=1000,allow_other /dev/sdb2 /run/media/mac</code>
+<code>sudo apfs-fuse -o uid=1000,gid=1000,allow_other /dev/sdb2 /run/media/mac</code></br>
+Enter your MacOS password, the disk is probably encrypted.
 
 to unmount the drive later on, use:</br>
 <code>sudo umount /run/media/mac</code>
