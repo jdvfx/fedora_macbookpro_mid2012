@@ -42,10 +42,11 @@ https://www.ifixit.com/Guide/MacBook+Pro+13-Inch+Unibody+Mid+2012+Hard+Drive+Rep
 9) plug the MacOS drive with the Sata to USB cable
 10) mount the MacOS drive</br>
 - first check the drive letter with:
-<code>gnome-disks</code>
-it should be the last dive with the largest size, and Contents: APFS - Not Mounted eg: /dev/sdb2
+<code>gnome-disks</code></br>
+it should be the last drive, with the largest partition</br>
+<code>Contents: APFS - Not Mounted</code>eg: /dev/sdb2</br>
 <code>sudo apfs-fuse -o uid=1000,gid=1000,allow_other /dev/sdb2 /run/media/mac</code></br>
-Enter your MacOS password, the disk is probably encrypted.
+Enter your MacOS password, the disk is most likely encrypted.
 
 to unmount the drive later on, use:</br>
 <code>sudo umount /run/media/mac</code>
@@ -57,8 +58,8 @@ replace MAC_USERNAME and LINUX_USERNAME with your user names
 
 repeat for other folders like Pictures,Documents,Downloads,...
 
-13) setup sleep when lid is close
-<code>sudo gnome-text-editor /usr/lib/systemd/logind.conf</code>
+13) setup sleep when lid is close</br>
+<code>sudo gnome-text-editor /usr/lib/systemd/logind.conf</code></br>
 un-comment (remove #) on this line: #HandleLidSwitch=suspend
 
 14) control fans (optional)
