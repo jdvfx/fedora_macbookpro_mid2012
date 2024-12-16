@@ -37,7 +37,11 @@ https://www.ifixit.com/Guide/MacBook+Pro+13-Inch+Unibody+Mid+2012+Hard+Drive+Rep
     <code>sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm</code>
     <sudo dnf broadcom-wl akmod-wl>
 
-> note: there seems to be a lot of issues with the drivers and some kernel updates, an easy fix is to use a wifi dongle, eg: TP-Link N150
+> the wifi adpater is a Broadcom BCM4331</br>
+you can double check what kernel version works with it:
+https://linux-hardware.org/?id=pci:14e4-4331-106b-00f5&page=5#status
+
+> if all fails, an easy fix is to use a wifi dongle, eg: TP-Link N150
 
 
 8) reboot and connect to wifi
