@@ -35,6 +35,8 @@ https://www.ifixit.com/Guide/MacBook+Pro+13-Inch+Unibody+Mid+2012+Hard+Drive+Rep
    - enable RPM fusion free and non-free:</br>
     <code>sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm</code></br>
     <code>sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm</code>
+    <sudo dnf broadcom-wl akmod-wl>
+
 8) reboot and connect to wifi
 9) enable the Apple file system</br>
 <code>sudo dnf install apfs-fuse</code></br>
@@ -56,16 +58,23 @@ replace MAC_USERNAME and LINUX_USERNAME with your user names
 
 <code>rsync -a --progress /run/media/mac/root/Users/MAC_USERNAME/Desktop/ /home/LINUX_USERNAME/Desktop/</code>
 
-repeat for other folders like Pictures,Documents,Downloads,...
+repeat for other folders like Pictures, Music, Documents, Downloads, ...
 
 13) setup sleep when lid is close</br>
 <code>sudo gnome-text-editor /usr/lib/systemd/logind.conf</code></br>
 un-comment (remove #) on this line: #HandleLidSwitch=suspend
 
 14) control fans (optional)
-<code>sudo dnf install mbpfan</code></br>
+<code>sudo dnf install mbpfan lm_sensors</code></br>
 - enable mbpfan service
+
+- (need to check info)
+<code>sudo systemctl start mbpfan</code></br>
+<code>sudo systemctl enable mbpfan</code></br>
+<code>sudo systemctl status mbpfan</code></br>
+
 <code>sudo service mbpfan start</code></br>
+
 - the fan config file is located in: /etc/mbpfan.conf
 
 
