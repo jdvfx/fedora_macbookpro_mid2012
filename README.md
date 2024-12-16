@@ -44,7 +44,7 @@ https://www.ifixit.com/Guide/MacBook+Pro+13-Inch+Unibody+Mid+2012+Hard+Drive+Rep
 - first check the drive letter with:
 <code>gnome-disks</code></br>
 it should be the last drive, with the largest partition</br>
-<code>Contents: APFS - Not Mounted</code>eg: /dev/sdb2</br>
+<em>Contents: APFS - Not Mounted</em>eg: /dev/sdb2</br>
 <code>sudo apfs-fuse -o uid=1000,gid=1000,allow_other /dev/sdb2 /run/media/mac</code></br>
 Enter your MacOS password, the disk is most likely encrypted.
 
