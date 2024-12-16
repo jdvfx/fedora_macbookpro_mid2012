@@ -1,4 +1,4 @@
-# Guide: Installing Fedora Linux on Macbook Pro 9,2 (mid 2012)
+# Guide: Installing Fedora Linux on Macbook Pro 9,2 (13" mid 2012)
 
 > you will need a ethernet cable
 
@@ -15,11 +15,19 @@ After installing Linux, we can boot into MacOS via usb using the Option Key
 - 1 ethernet cable. the Wifi doesn't work out of the box unfortunately
 
 > create a bootable USB stick with Fedora Linux on it
+- Download the Fedora ISO & Fedora Media Writer:</br>
+https://fedoraproject.org/workstation/download
+- Alternatively, flash the ISO to the USB stick with Etcher:</br>
+https://etcher.balena.io/
+
+remove SSD or HardDrive:
+https://www.ifixit.com/Guide/MacBook+Pro+13-Inch+Unibody+Mid+2012+Hard+Drive+Replacement/10378</br>
 
 1) shutdown computer
 2) remove the screws at the back of the laptop
-3) replace the existing drive with the new SSD drive
-4) put the back cover and plug the USB stick
+3) replace the existing drive with the new blank SSD drive
+
+4) put the back cover and plug the USB stick with the Fedora installer
 4) start up with the option Key pressed
 5) select the USB stick name, that should boot up into a Fedora install
 6) update the system, in a terminal: <code>sudo dnf update</code>
@@ -28,11 +36,14 @@ After installing Linux, we can boot into MacOS via usb using the Option Key
     <code>sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm</code></br>
     <code>sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm</code>
 8) reboot and connect to wifi
-9) enable Apple file system</br>
+9) enable the Apple file system</br>
 <code>sudo dnf install apfs-fuse</code></br>
 
 9) plug the MacOS drive with the Sata to USB cable
 10) mount the MacOS drive</br>
+- first check the drive letter with:
+<code>gnome-disks</code>
+it should be the last dive with the largest size, and Contents: APFS - Not Mounted eg: /dev/sdb2
 <code>sudo apfs-fuse -o uid=1000,gid=1000,allow_other /dev/sdb2 /run/media/mac</code></br>
 Enter your MacOS password, the disk is probably encrypted.
 
