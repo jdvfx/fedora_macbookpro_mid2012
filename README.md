@@ -77,7 +77,7 @@ un-comment (remove #) on this line: #HandleLidSwitch=suspend
 
 - the fan config file is located in: /etc/mbpfan.conf
 
-15) enable dark mode by default (optional)
+15) enable dark mode by default (optional)</br>
 <code>gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark && gsettings set org.gnome.desktop.interface color-scheme prefer-dark</code>
 
 
