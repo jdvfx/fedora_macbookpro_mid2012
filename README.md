@@ -1,6 +1,6 @@
 # Guide: Installing Fedora Linux on Macbook Pro 9,2 (13" mid 2012)
 
-> you will need a ethernet cable
+> you will need an ethernet cable
 
 How to smoothly and safely transistion from MacOS to Fedora Linux.
 Instead of re-formating, we'll install Linux on a new drive
@@ -54,7 +54,7 @@ to unmount the drive later on, use:</br>
 11) copy all your personal files from MacOS to Fedora:</br>
 replace MAC_USERNAME and LINUX_USERNAME with your user names
 
-<code>rsync -a --progress /run/media/mac/root/Users/MAC_USERNAME/Desktop/ /home/<>LINUX_USERNAME/Desktop/</code>
+<code>rsync -a --progress /run/media/mac/root/Users/MAC_USERNAME/Desktop/ /home/LINUX_USERNAME/Desktop/</code>
 
 repeat for other folders like Pictures,Documents,Downloads,...
 
