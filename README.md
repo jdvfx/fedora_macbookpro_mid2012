@@ -103,7 +103,7 @@ if <em>kernel-devel</em> is missing, let's install it...</br>
 get the current kernel version: <code>uname -r</code></br>
 eg: <em>6.11.11.200.fc40.x86_64</em></br>
 download the correct kernel-devel version<br>
-<em>make sure to get the correct:</br>
+> make sure to get the correct:</br>
 - Kernel version (6.11.11.200)
 - Fedora version (fc40)
 - Architecture (x86_64)
