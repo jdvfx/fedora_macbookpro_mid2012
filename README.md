@@ -109,8 +109,8 @@ download the correct kernel-devel version<br>
 - Architecture (x86_64)
 
 https://koji.fedoraproject.org/koji/packageinfo?buildStart=0&packageID=8&buildOrder=-completion_time&tagOrder=name&tagStart=0#buildlist</br>
-then install with: <code>sudo rpm -i ~/Downloads/kernel-devel.6.11.11-200.fc40.x86_64.rpm</code></br>
-then re-install the driver: <code>sudo dnf reinstall broadcom-wl</code></br>
+then install with:</br><code>sudo rpm -i ~/Downloads/kernel-devel.6.11.11-200.fc40.x86_64.rpm</code></br>
+then re-install the driver:</br><code>sudo dnf reinstall broadcom-wl</code></br>
 reboot
 
 
