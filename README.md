@@ -78,19 +78,40 @@ un-comment (remove #) on this line: #HandleLidSwitch=suspend
 
 14) control fans (optional)
 <code>sudo dnf install mbpfan lm_sensors</code></br>
-- enable mbpfan service
-
-- (need to check info)
-<code>sudo systemctl start mbpfan</code></br>
 <code>sudo systemctl enable mbpfan</code></br>
+<code>sudo systemctl start mbpfan</code></br>
+- check mbpfan is running: </br>
 <code>sudo systemctl status mbpfan</code></br>
-
-<code>sudo service mbpfan start</code></br>
 
 - the fan config file is located in: /etc/mbpfan.conf
 
 15) enable dark mode by default (optional)</br>
 <code>gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark && gsettings set org.gnome.desktop.interface color-scheme prefer-dark</code>
+
+------------------------------------------------------
+
+> Fedora cheat sheet / how to re-install the wifi driver on an older kernel</br>
+boot into an older kernel: press F8 on boot</br>
+after login, set the default kernel to that version:</br>
+list available kernels:</br>
+<code>sudo grubby --info=ALL | grep -E "^kernel|^index"</code></br>
+change the default kernel version on boot, eg: index=1</br>
+<code>sudo grubby --set-default-index=1</code>
+then re-install the driver: <code>sudo dnf reinstall broadcom-wl</code></br>
+if kernel-devel is missing, let's install it</br>
+get the current kernel version:
+<code>uname -r</code></br>
+6.11.11.200.fc40.x86_64</br>
+to rebuild the wifi driver for another kernel, we'll need kernel-devel
+with the corresponding kernel version</br>
+download the correct version:<br>
+https://koji.fedoraproject.org/koji/packageinfo?buildStart=0&packageID=8&buildOrder=-completion_time&tagOrder=name&tagStart=0#buildlist</br>
+then install with: <code>sudo rpm -i ~/Downloads/kernel-devel.6.11.11-200.fc40.x86_64.rpm</code></br>
+then re-install the driver: <code>sudo dnf reinstall broadcom-wl</code></br>
+reboot
+
+
+
 
 
 
