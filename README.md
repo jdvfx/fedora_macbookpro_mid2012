@@ -76,35 +76,38 @@ repeat for other folders like Pictures, Music, Documents, Downloads, ...
 <code>sudo gnome-text-editor /usr/lib/systemd/logind.conf</code></br>
 un-comment (remove #) on this line: #HandleLidSwitch=suspend
 
-14) control fans (optional)
+14) control fans (optional)</br>
 <code>sudo dnf install mbpfan lm_sensors</code></br>
 <code>sudo systemctl enable mbpfan</code></br>
 <code>sudo systemctl start mbpfan</code></br>
 - check mbpfan is running: </br>
 <code>sudo systemctl status mbpfan</code></br>
-
 - the fan config file is located in: /etc/mbpfan.conf
+
 
 15) enable dark mode by default (optional)</br>
 <code>gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark && gsettings set org.gnome.desktop.interface color-scheme prefer-dark</code>
 
 ------------------------------------------------------
 
-> Fedora cheat sheet / how to re-install the wifi driver on an older kernel</br>
+> Cheat sheet: how to re-install the wifi driver on an older kernel</br>
 boot into an older kernel: press F8 on boot</br>
 after login, set the default kernel to that version:</br>
 list available kernels:</br>
 <code>sudo grubby --info=ALL | grep -E "^kernel|^index"</code></br>
 change the default kernel version on boot, eg: index=1</br>
 <code>sudo grubby --set-default-index=1</code>
-then re-install the driver: <code>sudo dnf reinstall broadcom-wl</code></br>
-if kernel-devel is missing, let's install it</br>
-get the current kernel version:
-<code>uname -r</code></br>
-6.11.11.200.fc40.x86_64</br>
-to rebuild the wifi driver for another kernel, we'll need kernel-devel
-with the corresponding kernel version</br>
-download the correct version:<br>
+then re-install the driver:</br>
+<code>sudo dnf reinstall broadcom-wl</code></br>
+if <em>kernel-devel</em> is missing, let's install it...</br>
+get the current kernel version: <code>uname -r</code></br>
+eg: <em>6.11.11.200.fc40.x86_64</em></br>
+download the correct kernel-devel version<br>
+<em>make sure to get the correct:</br>
+- Kernel version (6.11.11.200)
+- Fedora version (fc40)
+- Architecture (x86_64)
+
 https://koji.fedoraproject.org/koji/packageinfo?buildStart=0&packageID=8&buildOrder=-completion_time&tagOrder=name&tagStart=0#buildlist</br>
 then install with: <code>sudo rpm -i ~/Downloads/kernel-devel.6.11.11-200.fc40.x86_64.rpm</code></br>
 then re-install the driver: <code>sudo dnf reinstall broadcom-wl</code></br>
